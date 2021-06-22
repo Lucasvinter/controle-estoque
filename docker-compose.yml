@@ -1,0 +1,16 @@
+version: '3'
+services:
+  database:
+    image: postgres:11.5-alpine
+    restart: always
+    volumes:
+      - flaskapidb:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: controle
+      POSTGRES_PASSWORD: controle54321
+      POSTGRES_DB: controleestoque
+      TZ: America/Sao_Paulo
+volumes:
+  flaskapidb:
